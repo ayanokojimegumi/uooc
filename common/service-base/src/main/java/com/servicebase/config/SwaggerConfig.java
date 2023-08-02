@@ -9,16 +9,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-//@EnableOpenApi
-//@EnableWebMvc
 public class SwaggerConfig{
 
     @Bean
     public OpenAPI restfulOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Spring Boot3 Restful Zoo API")
-                        .description("Zoo & Animal Detail APi")
-                        .version("v0.0.1")
+                .info(new Info().title("在线学习网站接口api")
+                        .description("在线学习网站详细api")
+                        .version("1.0.0")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                         .description("SpringDoc Wiki Documentation")
