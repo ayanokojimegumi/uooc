@@ -117,10 +117,17 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 引入common服务下的service-base服务 -->
+        <!-- 引入common模块下的service-base服务 -->
         <dependency>
             <groupId>com.gdlgxy</groupId>
             <artifactId>service-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- 引入common模块下的common-utils服务 -->
+        <dependency>
+            <groupId>com.gdlgxy</groupId>
+            <artifactId>common-utils</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

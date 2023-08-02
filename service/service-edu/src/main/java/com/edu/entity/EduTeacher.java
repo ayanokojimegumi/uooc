@@ -1,6 +1,6 @@
 package com.edu.entity;
 
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class EduTeacher {
     @Schema(title = "讲师id")
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
 
     @Schema(title = "讲师姓名")
@@ -44,9 +45,11 @@ public class EduTeacher {
     @Schema(title = "逻辑删除 1（true）已删除， 0（false）未删除")
     private Boolean isDeleted;
 
+    @TableField(fill = FieldFill.INSERT)
     @Schema(title = "创建时间")
     private Date gmtCreate;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     @Schema(title = "更新时间")
     private Date gmtModified;
 }
