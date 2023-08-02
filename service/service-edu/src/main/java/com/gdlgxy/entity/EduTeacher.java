@@ -1,5 +1,6 @@
-package entity;
+package com.gdlgxy.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,7 @@ public class EduTeacher {
     private String avatar;
     //排序
     private Integer sort;
+    @TableLogic //实现逻辑删除
     //逻辑删除 1（true）已删除， 0（false）未删除
     private Boolean isDeleted;
     //创建时间

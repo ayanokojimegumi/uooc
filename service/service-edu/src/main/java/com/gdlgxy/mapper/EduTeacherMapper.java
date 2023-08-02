@@ -1,7 +1,7 @@
-package dao;
+package com.gdlgxy.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import entity.EduTeacher;
+import com.gdlgxy.entity.EduTeacher;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2023-08-02 00:31:45
  */
 @Mapper
-public interface EduTeacherDao extends BaseMapper<EduTeacher> {
+public interface EduTeacherMapper extends BaseMapper<EduTeacher> {
 
 }
 
