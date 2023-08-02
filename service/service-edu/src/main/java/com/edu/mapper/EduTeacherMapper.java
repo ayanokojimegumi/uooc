@@ -1,7 +1,7 @@
-package com.gdlgxy.mapper;
+package com.edu.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.gdlgxy.entity.EduTeacher;
+import com.edu.entity.EduTeacher;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

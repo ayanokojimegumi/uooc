@@ -1,8 +1,12 @@
-package com.gdlgxy.controller;
+package com.edu.controller;
 
 
-import com.gdlgxy.entity.EduTeacher;
-import com.gdlgxy.service.EduTeacherService;
+import com.edu.entity.EduTeacher;
+import com.edu.service.EduTeacherService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +18,7 @@ import java.util.List;
  * @author mark
  * @since 2023-08-02 00:31:44
  */
+@Tag(name = "EduTeacherController", description = "教师api")
 @RestController
 @RequestMapping("/eduservice/teacher")
 public class EduTeacherController {
@@ -34,6 +39,7 @@ public class EduTeacherController {
 //    public R selectAll(Page<EduTeacher> page, EduTeacher eduTeacher) {
 //        return success(this.eduTeacherService.page(page, new QueryWrapper<>(eduTeacher)));
 //    }
+    @Operation(summary = "获取全部教师信息", description = "返回全体教师信息")
     @GetMapping()
     public List<EduTeacher> selectAll() {
         return eduTeacherService.list();

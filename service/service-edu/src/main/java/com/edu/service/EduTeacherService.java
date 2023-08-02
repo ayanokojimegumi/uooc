@@ -1,7 +1,7 @@
-package com.gdlgxy.service;
+package com.edu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.gdlgxy.entity.EduTeacher;
+import com.edu.entity.EduTeacher;
 
 /**
  * 讲师(EduTeacher)表服务接口

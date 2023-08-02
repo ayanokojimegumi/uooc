@@ -1,4 +1,4 @@
-package com.gdlgxy.config;
+package com.edu.config;
 
 import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan(basePackages = "com.gdlgxy.mapper")
+@MapperScan(basePackages = "com.edu.mapper")
 public class EduConfig {
 
     /**

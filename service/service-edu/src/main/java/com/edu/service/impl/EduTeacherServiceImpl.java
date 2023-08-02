@@ -1,9 +1,9 @@
-package com.gdlgxy.service.impl;
+package com.edu.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.gdlgxy.service.EduTeacherService;
-import com.gdlgxy.mapper.EduTeacherMapper;
-import com.gdlgxy.entity.EduTeacher;
+import com.edu.service.EduTeacherService;
+import com.edu.mapper.EduTeacherMapper;
+import com.edu.entity.EduTeacher;
 import org.springframework.stereotype.Service;
 
 /**
