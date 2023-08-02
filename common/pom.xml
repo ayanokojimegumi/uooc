@@ -9,6 +9,9 @@
 
     <artifactId>common</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>service-base</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,16 +41,10 @@
 
         <!-- swagger -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <scope>provided</scope>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- redis -->
         <dependency>
