@@ -1,6 +1,7 @@
 package com.servicebase.handler;
 
 import com.commonutils.R;
+import com.servicebase.exception.ImageTypeException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,4 +16,13 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return R.error();
     }
+
+    @ExceptionHandler(ImageTypeException.class)
+    @ResponseBody
+    public R error(ImageTypeException e) {
+        log.error(e.getMessage());
+        e.printStackTrace();
+        return R.error();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.oss.service;
 
+import com.servicebase.exception.ImageTypeException;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -7,11 +8,11 @@ import org.springframework.web.multipart.MultipartFile;
  * @author: mark
  * @create: 2023-08-04 17:17
  **/
-public interface FileService {
+public interface UploadService {
     /**
      * 文件上传至阿里云
      * @param file 文件对象
      * @return 返回string类型
      */
-    String upload(MultipartFile file);
+    String upload(MultipartFile file) throws ImageTypeException;
 }

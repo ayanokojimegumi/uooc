@@ -35,6 +35,10 @@ public class EduTeacherController {
      * @param limit
      * @return
      */
+    @Operation(summary = "分页查询", description = "对数据库中的数据进行查询，并且将查询的结果进行分页",
+            parameters = {@Parameter(name = "page", description = "当前页"),
+                    @Parameter(name = "limit", description = "每页数据条数")})
+    @ApiResponse(description = "返回查询到的所有教师信息，并进行分页", responseCode = "0/1 成功返回1，失败返回0")
     @GetMapping("/pageteacher{page}/{limit}")
     public R pageList(@PathVariable Long page, @PathVariable Long limit){
         return eduTeacherService.pageList(page, limit);
