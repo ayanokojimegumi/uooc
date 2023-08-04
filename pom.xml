@@ -15,6 +15,7 @@
     <modules>
         <module>service</module>
         <module>common</module>
+        <module>service/service-oss</module>
     </modules>
     <version>1.0.0</version>
 

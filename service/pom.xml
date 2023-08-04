@@ -124,11 +124,6 @@
             <version>1.0.0</version>
         </dependency>
 
-        <!-- 引入common模块下的common-utils服务 -->
-        <dependency>
-            <groupId>com.gdlgxy</groupId>
-            <artifactId>common-utils</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
     </dependencies>
 </project>

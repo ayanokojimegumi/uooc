@@ -4,12 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.commonutils.R;
-import com.edu.entity.vo.TeacherQuery;
-import com.edu.service.EduTeacherService;
-import com.edu.mapper.EduTeacherMapper;
 import com.edu.entity.EduTeacher;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import com.edu.entity.vo.TeacherQuery;
+import com.edu.mapper.EduTeacherMapper;
+import com.edu.service.EduTeacherService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -31,6 +29,19 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
     @Resource
     private EduTeacherMapper teacherMapper;
 
+    @Override
+    public R pageList(Long page, Long limit){
+        Page<EduTeacher> pageParam = new Page<>(page, limit);
+        teacherMapper.selectPage(pageParam, null);
+
+        List<EduTeacher> records = pageParam.getRecords();
+        long total = pageParam.getTotal();
+        return R.ok()
+                .data("total", total)
+                .data("records", records);
+    }
+
+
     /**
      * 模糊分页查询,根据条件进行查询，没有条件时，默认全部查询并且分页
      * @param page 当前页
@@ -39,10 +50,10 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
      * @return 根据条件查询的结果，返回相应的教师信息，如没条件，返回所有教师信息
      */
     @Override
-    public R pageQuery(int page, int limit, TeacherQuery teacherQuery) {
+    public R pageQuery(Long page, Long limit, TeacherQuery teacherQuery) {
         //页面对象
         Page<EduTeacher> pageParam = new Page<>(page, limit);
-        //条件对面
+        //条件
         LambdaQueryWrapper<EduTeacher> queryWrapper = new LambdaQueryWrapper<>();
         //如果没有条件，查询所有教师信息
         if (teacherQuery == null) {
@@ -53,6 +64,7 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
                     .data("total", total)
                     .data("records", records);
         }
+
         //获取条件
         String name = teacherQuery.getName();
         Integer level = teacherQuery.getLevel();
@@ -68,12 +80,12 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
             queryWrapper.eq(EduTeacher::getLevel, level);
         }
         if (!StringUtils.isEmpty(begin)) {
-            queryWrapper.ge(EduTeacher::getGmtCreate, level);
+            queryWrapper.ge(EduTeacher::getGmtCreate, begin);
         }
         if (!StringUtils.isEmpty(end)) {
-            queryWrapper.le(EduTeacher::getGmtCreate, level);
+            queryWrapper.le(EduTeacher::getGmtCreate, end);
         }
-
+        queryWrapper.orderByDesc(EduTeacher::getGmtModified);
         //都不为空，按照所有条件查
         teacherMapper.selectPage(pageParam, queryWrapper);
         List<EduTeacher> records = pageParam.getRecords();
