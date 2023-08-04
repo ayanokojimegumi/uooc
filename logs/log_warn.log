@@ -1,0 +1,22 @@
+2023-08-04 00:05:09.829 [http-nio-8001-exec-6] WARN 
+                c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @385c9627
+2023-08-04 00:05:15.391 [http-nio-8001-exec-2] WARN 
+                o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.commonutils.R com.edu.controller.EduTeacherController.insert(com.edu.entity.EduTeacher)]
+2023-08-04 00:14:12.766 [http-nio-8001-exec-1] WARN 
+                o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.commonutils.R com.edu.controller.EduTeacherController.insert(com.edu.entity.EduTeacher)]
+2023-08-04 12:30:14.307 [http-nio-8001-exec-10] WARN 
+                c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @385c9627
+2023-08-04 12:42:47.275 [http-nio-8001-exec-1] WARN 
+                c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @385c9627
+2023-08-04 13:32:25.754 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m7s744ms296µs100ns).
+2023-08-04 15:27:37.897 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h50m35s105ms462µs900ns).
+2023-08-04 17:00:17.724 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.oss]' package. Please check your configuration.
+2023-08-04 17:00:18.488 [main] WARN 
+                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-08-04 17:00:36.788 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.oss]' package. Please check your configuration.
+2023-08-04 17:00:37.589 [main] WARN 
+                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
