@@ -1,20 +1,21 @@
 package com.edu.listener;
 
 import com.alibaba.excel.context.AnalysisContext;
-import com.alibaba.excel.event.AnalysisEventListener;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.alibaba.excel.read.listener.ReadListener;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.edu.entity.EduSubject;
 import com.edu.entity.excel.ExcelSubjectData;
 import com.edu.service.EduSubjectService;
 import com.servicebase.exception.NotDataFormExcelException;
 import jakarta.annotation.Resource;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @description: easyexcel读取文件监听类
  * @author: mark
  * @create: 2023-08-05 22:17
  **/
-public class SubjectExcelListener extends AnalysisEventListener<ExcelSubjectData> {
+public class SubjectExcelListener implements ReadListener<ExcelSubjectData> {
     @Resource
     public EduSubjectService subjectService;
     //创建有参数构造，传递subjectService用于操作数据库
@@ -26,6 +27,7 @@ public class SubjectExcelListener extends AnalysisEventListener<ExcelSubjectData
     }
 
     @Override
+    @Transactional
     public void invoke(ExcelSubjectData excelSubjectData, AnalysisContext analysisContext) {
         if(excelSubjectData == null) {
             try {
@@ -60,17 +62,17 @@ public class SubjectExcelListener extends AnalysisEventListener<ExcelSubjectData
     }
     //判断一级分类是否重复
     private EduSubject existTwoSubject(String name, String pid) {
-        QueryWrapper<EduSubject> wrapper = new QueryWrapper<>();
-        wrapper.eq("title",name);
-        wrapper.eq("parent_id",pid);
+        LambdaQueryWrapper<EduSubject> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(EduSubject::getTitle, name);
+        wrapper.eq(EduSubject::getParentId, pid);
         EduSubject eduSubject = subjectService.getOne(wrapper);
         return eduSubject;
     }
 
     private EduSubject existOneSubject(String name) {
-        QueryWrapper<EduSubject> wrapper = new QueryWrapper<>();
-        wrapper.eq("title",name);
-        wrapper.eq("parent_id","0");
+        LambdaQueryWrapper<EduSubject> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(EduSubject::getTitle, name);
+        wrapper.eq(EduSubject::getParentId, "0");
         EduSubject eduSubject = subjectService.getOne(wrapper);
         return eduSubject;
     }

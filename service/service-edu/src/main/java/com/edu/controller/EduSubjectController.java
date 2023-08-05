@@ -6,6 +6,7 @@ import com.edu.entity.vo.SubjectNestedVo;
 import com.edu.service.EduSubjectService;
 import com.servicebase.exception.NotDataFormExcelException;
 import jakarta.annotation.Resource;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,7 +19,8 @@ import java.util.List;
  * @since 2023-08-05 22:42:38
  */
 @RestController
-@RequestMapping("/eduservice/subject")
+@RequestMapping("eduservice/subject")
+@CrossOrigin
 public class EduSubjectController {
     /**
      * 服务对象
@@ -26,8 +28,9 @@ public class EduSubjectController {
     @Resource
     private EduSubjectService eduSubjectService;
 
-    @PostMapping(consumes = "multipart/form-data")
-    public R addSubject(@RequestParam("file") MultipartFile file) throws NotDataFormExcelException {
+    @SneakyThrows
+    @PostMapping
+    public R addSubject(MultipartFile file){
     //1 获取上传的excel文件 MultipartFile
     //返回错误提示信息
         eduSubjectService.importSubjectData(file);
