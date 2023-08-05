@@ -1,16 +1,9 @@
 package com.oss.utils;
 
-import com.aliyun.oss.OSS;
-import com.aliyun.oss.OSSClient;
-import com.aliyun.oss.OSSClientBuilder;
-import com.aliyun.oss.model.CannedAccessControlList;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @description: 常量类，读取配置文件application.properties中的配置
@@ -18,9 +11,8 @@ import org.springframework.context.annotation.Scope;
  * @create: 2023-08-04 17:05
  **/
 
-@Data
-@Configuration
-public class AliyunConfig{
+@Component
+public class ConstantPropertiesUtil implements InitializingBean {
     @Schema(title = "地域节点(用于外网访问)")
     @Value("${aliyun.oss.endpoint}")
     private String endpoint;
@@ -40,11 +32,18 @@ public class AliyunConfig{
     @Value("${aliyun.oss.urlPrefix}")
     private String urlPrefix;
 
-    @Bean
-    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public OSS ossClient() {
-        OSS oss = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
-        oss.setBucketAcl(bucketName, CannedAccessControlList.PublicRead);
-        return oss;
+    public static String END_POINT;
+    public static String ACCESS_KEY_ID;
+    public static String ACCESS_KEY_SECRET;
+    public static String BUCKET_NAME;
+    public static String URL_PREFIX;
+
+    @Override
+    public void afterPropertiesSet() {
+        END_POINT = endpoint;
+        ACCESS_KEY_ID = accessKeyId;
+        ACCESS_KEY_SECRET = accessKeySecret;
+        BUCKET_NAME = bucketName;
+        URL_PREFIX = urlPrefix;
     }
 }

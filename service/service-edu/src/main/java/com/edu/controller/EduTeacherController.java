@@ -75,7 +75,7 @@ public class EduTeacherController {
     @Operation(summary = "根据主键查询",description = "根据接收的教师id，查询该教师的详细信息",
     parameters = {@Parameter(name = "id", description = "教师id")})
     @ApiResponse(description = "返回查询到的教师信息", responseCode = "0/1 成功返回1，失败返回0")
-    @GetMapping("getTeacher/{id}")
+    @GetMapping("/{id}")
     public R selectOne(@PathVariable("id") String id) {
         EduTeacher teacher = this.eduTeacherService.getById(id);
         if (teacher != null) {
@@ -109,7 +109,7 @@ public class EduTeacherController {
     @Operation(summary = "根据id修改教师信息",
               parameters = {@Parameter(name = "id", description = "教师id")})
     @ApiResponse(responseCode = "0/1 成功返回1，失败返回0",description = "返回一个R对象，包含状态码及详细信息")
-    @PostMapping("/update")
+    @PutMapping
     public R update(@RequestBody EduTeacher eduTeacher) {
         boolean flag = this.eduTeacherService.updateById(eduTeacher);
         if (flag) {
@@ -129,7 +129,7 @@ public class EduTeacherController {
     @Operation(summary = "根据id删除教师信息",
         parameters = {@Parameter(name = "id", description = "教师id")})
     @ApiResponse(responseCode = "0/1 成功返回1，失败返回0",description = "返回一个R对象，包含状态码及详细信息")
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public R delete(@PathVariable("id") String id) {
         eduTeacherService.removeById(id);
         return R.ok();

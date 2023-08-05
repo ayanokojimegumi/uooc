@@ -958,3 +958,331 @@
                 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36b5da7d
 2023-08-05 20:07:30.774 [http-nio-8001-exec-1] INFO 
                 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-05 23:04:26.132 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 14260 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:04:26.135 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:04:27.048 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:04:27.051 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:04:27.086 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:04:27.790 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:04:27.803 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:04:27.804 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:04:27.804 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:04:27.911 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:04:27.911 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1731 ms
+2023-08-05 23:04:29.303 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:04:29.327 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:04:29.339 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 3.682 seconds (process running for 4.254)
+2023-08-05 23:15:30.703 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:15:30.703 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:15:30.704 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:15:33.791 [http-nio-8001-exec-5] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-05 23:15:34.195 [http-nio-8001-exec-5] INFO 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@111cd7e2
+2023-08-05 23:15:34.199 [http-nio-8001-exec-5] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-05 23:18:03.807 [SpringApplicationShutdownHook] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-05 23:18:03.812 [SpringApplicationShutdownHook] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-05 23:18:07.594 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 11572 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:18:07.596 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:18:08.131 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:18:08.133 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:18:08.156 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:18:08.562 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:18:08.568 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:18:08.569 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:18:08.569 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:18:08.643 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:18:08.643 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1016 ms
+2023-08-05 23:18:09.553 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:18:09.567 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:18:09.575 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.369 seconds (process running for 2.821)
+2023-08-05 23:18:13.924 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:18:13.924 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:18:13.925 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:18:16.077 [http-nio-8001-exec-2] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-05 23:18:16.406 [http-nio-8001-exec-2] INFO 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@162da694
+2023-08-05 23:18:16.409 [http-nio-8001-exec-2] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-05 23:27:01.435 [SpringApplicationShutdownHook] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-05 23:27:01.442 [SpringApplicationShutdownHook] INFO 
+                com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-05 23:27:05.870 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 7776 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:27:05.872 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:27:06.457 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:27:06.459 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:27:06.482 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:27:06.888 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:27:06.895 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:27:06.896 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:27:06.896 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:27:06.963 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:27:06.963 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1054 ms
+2023-08-05 23:27:07.821 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:27:07.836 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:27:07.846 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.413 seconds (process running for 2.877)
+2023-08-05 23:27:12.906 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:27:12.906 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:27:12.907 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-08-05 23:28:36.963 [http-nio-8001-exec-5] INFO 
+                org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 288 ms
+2023-08-05 23:32:36.510 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 12028 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:32:36.512 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:32:37.152 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:32:37.154 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:32:37.177 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:32:37.600 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:32:37.607 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:32:37.607 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:32:37.608 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:32:37.669 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:32:37.669 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1117 ms
+2023-08-05 23:32:38.608 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:32:38.624 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:32:38.634 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.58 seconds (process running for 3.026)
+2023-08-05 23:32:43.465 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:32:43.465 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:32:43.467 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:34:06.834 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 16440 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:34:06.836 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:34:07.378 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:34:07.380 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:34:07.404 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:34:07.849 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:34:07.857 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:34:07.865 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:34:07.865 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:34:07.931 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:34:07.932 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1064 ms
+2023-08-05 23:34:08.802 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:34:08.816 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:34:08.824 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.385 seconds (process running for 2.835)
+2023-08-05 23:34:13.502 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:34:13.503 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:34:13.504 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:35:09.034 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 5232 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:35:09.037 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:35:09.572 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:35:09.574 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:35:09.597 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:35:10.006 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:35:10.016 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:35:10.016 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:35:10.017 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:35:10.081 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:35:10.082 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1013 ms
+2023-08-05 23:35:11.027 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:35:11.043 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:35:11.052 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.408 seconds (process running for 2.856)
+2023-08-05 23:35:15.671 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:35:15.672 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:35:15.673 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:42:25.994 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 17092 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:42:25.996 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:42:26.634 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:42:26.636 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:42:26.660 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:42:27.079 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:42:27.086 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:42:27.087 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:42:27.088 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:42:27.149 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:42:27.149 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1117 ms
+2023-08-05 23:42:28.021 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:42:28.035 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:42:28.043 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.503 seconds (process running for 3.014)
+2023-08-05 23:42:33.797 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:42:33.797 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:42:33.798 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:45:12.550 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 12216 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:45:12.553 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:45:13.117 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:45:13.119 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:45:13.143 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:45:13.550 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:45:13.558 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:45:13.559 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:45:13.559 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:45:13.620 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:45:13.621 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1039 ms
+2023-08-05 23:45:14.481 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:45:14.494 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:45:14.518 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.351 seconds (process running for 2.795)
+2023-08-05 23:45:18.951 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:45:18.952 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:45:18.953 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-05 23:48:04.093 [main] INFO 
+                com.edu.EduApplication - Starting EduApplication using Java 17 with PID 18272 (D:\TestCode\uooc\service\service-edu\target\classes started by 16965 in D:\TestCode\uooc)
+2023-08-05 23:48:04.095 [main] INFO 
+                com.edu.EduApplication - The following 1 profile is active: "dev"
+2023-08-05 23:48:04.648 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-05 23:48:04.650 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-05 23:48:04.673 [main] INFO 
+                o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2023-08-05 23:48:05.082 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-08-05 23:48:05.090 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:48:05.091 [main] INFO 
+                org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-05 23:48:05.091 [main] INFO 
+                org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-08-05 23:48:05.160 [main] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-05 23:48:05.160 [main] INFO 
+                o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1031 ms
+2023-08-05 23:48:06.085 [main] INFO 
+                org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-08-05 23:48:06.100 [main] INFO 
+                o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-08-05 23:48:06.109 [main] INFO 
+                com.edu.EduApplication - Started EduApplication in 2.465 seconds (process running for 3.026)
+2023-08-05 23:48:10.505 [http-nio-8001-exec-1] INFO 
+                o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-05 23:48:10.505 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-05 23:48:10.506 [http-nio-8001-exec-1] INFO 
+                org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms

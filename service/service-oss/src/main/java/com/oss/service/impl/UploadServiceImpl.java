@@ -1,12 +1,10 @@
 package com.oss.service.impl;
 
-import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.CannedAccessControlList;
 import com.oss.service.UploadService;
-import com.oss.utils.AliyunConfig;
+import com.oss.utils.ConstantPropertiesUtil;
 import com.servicebase.exception.ImageTypeException;
-import jakarta.annotation.Resource;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
@@ -25,10 +23,6 @@ import java.io.InputStream;
 public class UploadServiceImpl implements UploadService {
     // 允许上传的格式
     private static final String[] IMAGE_TYPE = new String[]{".bmp", ".jpg", ".jpeg", ".gif", ".png", ".webp"};
-    @Resource
-    private OSS ossClient;
-    @Resource
-    private AliyunConfig aliyunConfig;
     /**
      * 将上传的图片存储到阿里云OSS里
      * @param file 图片对象
@@ -39,24 +33,46 @@ public class UploadServiceImpl implements UploadService {
         if (!isLegal(file)) {
             throw new ImageTypeException("图片类型异常");
         }
+        //获取oss属性
+        String endPoint = ConstantPropertiesUtil.END_POINT;
+        String accessKeyId = ConstantPropertiesUtil.ACCESS_KEY_ID;
+        String accessKeySecret = ConstantPropertiesUtil.ACCESS_KEY_SECRET;
+        String bucketName = ConstantPropertiesUtil.BUCKET_NAME;
+        String urlPrefix = ConstantPropertiesUtil.URL_PREFIX;
         //定义返回的URL变量
         String url;
         //获取文件路径
         String filename = file.getOriginalFilename();
         //设置URL
         String filePath = this.getFilePath(filename);
-        url =  aliyunConfig.getUrlPrefix() + filePath;
-
-        InputStream inputStream;
+        url = urlPrefix + filePath;
+        InputStream inputStream = null;
+        OSSClient ossClient = null;
         try {
+            ossClient = new OSSClient(endPoint, accessKeyId, accessKeySecret);
+            //判断Bucket是否存在
+            if (!ossClient.doesBucketExist(bucketName)) {
+                //创建bucket
+                ossClient.createBucket(bucketName);
+                //设置oss实例的访问权限：公共读
+                ossClient.setBucketAcl(bucketName, CannedAccessControlList.PublicRead);
+            }
             //通过file对象获取输入流
             inputStream = file.getInputStream();
             //上传至阿里OSS
-            ossClient.putObject(aliyunConfig.getBucketName(), filePath, inputStream);
+            ossClient.putObject(bucketName, filePath, inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            if (ossClient != null) {
+                ossClient.shutdown();
+            }
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
-
         return url;
     }
     /**
