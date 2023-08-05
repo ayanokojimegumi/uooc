@@ -2,6 +2,7 @@ package com.servicebase.handler;
 
 import com.commonutils.R;
 import com.servicebase.exception.ImageTypeException;
+import com.servicebase.exception.NotDataFormExcelException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,5 +25,11 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return R.error();
     }
-
+    @ExceptionHandler(NotDataFormExcelException.class)
+    @ResponseBody
+    public R error(NotDataFormExcelException e) {
+        log.error(e.getMessage());
+        e.printStackTrace();
+        return R.error();
+    }
 }
