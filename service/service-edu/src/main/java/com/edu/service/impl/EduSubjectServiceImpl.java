@@ -10,7 +10,7 @@ import com.edu.entity.vo.SubjectVo;
 import com.edu.listener.SubjectExcelListener;
 import com.edu.mapper.EduSubjectMapper;
 import com.edu.service.EduSubjectService;
-import com.servicebase.exception.NotDataFormExcelException;
+import com.servicebase.exception.UoocException;
 import lombok.SneakyThrows;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -42,7 +42,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
             EasyExcel.read(inputStream, ExcelSubjectData.class,
                     new SubjectExcelListener(this)).sheet().doRead();
         }catch(Exception e) {
-            throw new NotDataFormExcelException("添加课程分类失败");
+            throw new UoocException(20001, "添加课程分类失败");
         }
     }
 

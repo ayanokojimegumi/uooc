@@ -3,7 +3,7 @@ package com.edu.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.edu.entity.EduSubject;
 import com.edu.entity.vo.SubjectNestedVo;
-import com.servicebase.exception.NotDataFormExcelException;
+import com.servicebase.exception.UoocException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface EduSubjectService extends IService<EduSubject> {
 
-    void importSubjectData(MultipartFile file) throws NotDataFormExcelException;
+    void importSubjectData(MultipartFile file) throws UoocException;
 
     List<SubjectNestedVo> nestedList();
 }

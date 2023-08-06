@@ -4,7 +4,7 @@ import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.CannedAccessControlList;
 import com.oss.service.UploadService;
 import com.oss.utils.ConstantPropertiesUtil;
-import com.servicebase.exception.ImageTypeException;
+import com.servicebase.exception.UoocException;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
@@ -29,9 +29,9 @@ public class UploadServiceImpl implements UploadService {
      * @return 返回图片在OSS里的URL地址
      */
     @Override
-    public String upload(MultipartFile file) throws ImageTypeException {
+    public String upload(MultipartFile file) throws UoocException {
         if (!isLegal(file)) {
-            throw new ImageTypeException("图片类型异常");
+            throw new UoocException(20001, "图片类型异常");
         }
         //获取oss属性
         String endPoint = ConstantPropertiesUtil.END_POINT;

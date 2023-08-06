@@ -2,6 +2,7 @@ package com.edu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.edu.entity.EduCourse;
+import com.edu.entity.vo.CourseInfoFormVo;
 
 /**
  * 课程(EduCourse)表服务接口
@@ -11,5 +12,7 @@ import com.edu.entity.EduCourse;
  */
 public interface EduCourseService extends IService<EduCourse> {
 
+
+    void saveCourseInfo(CourseInfoFormVo courseInfoFormVo);
 }
 

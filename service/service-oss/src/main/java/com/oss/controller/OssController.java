@@ -2,7 +2,7 @@ package com.oss.controller;
 
 import com.commonutils.R;
 import com.oss.service.UploadService;
-import com.servicebase.exception.ImageTypeException;
+import com.servicebase.exception.UoocException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -39,7 +39,7 @@ public class OssController {
         String url;
         try {
             url = fileService.upload(file);
-        } catch (ImageTypeException e) {
+        } catch (UoocException e) {
            return R.error().message(e.getMessage());
         }
         return R.ok().message("文件上传成功").data("url", url);

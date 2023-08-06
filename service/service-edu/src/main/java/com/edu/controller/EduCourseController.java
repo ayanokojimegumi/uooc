@@ -1,11 +1,15 @@
 package com.edu.controller;
 
 
+import com.commonutils.R;
+import com.edu.entity.vo.CourseInfoFormVo;
 import com.edu.service.EduCourseService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 课程(EduCourse)表控制层
@@ -13,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @author mark
  * @since 2023-08-06 12:54:04
  */
+@Tag(name = "EduCourseController", description = "课程管理api")
 @RestController
-@RequestMapping("eduCourse")
+@RequestMapping("/eduservice/course")
 @CrossOrigin
 public class EduCourseController {
     /**
@@ -24,28 +29,19 @@ public class EduCourseController {
     private EduCourseService eduCourseService;
 
     /**
-     * 分页查询所有数据
+     * 添加课程基本信息
      *
-     * @param page 分页对象
-     * @param eduCourse 查询实体
-     * @return 所有数据
-     */
-
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-
-
-    /**
-     * 新增数据
-     *
-     * @param eduCourse 实体对象
+     * @param courseInfoFormVo 实体对象
      * @return 新增结果
      */
+    @Operation(summary = "添加课程基本信息",
+            parameters = {@Parameter(name = "courseInfoFormVo", description = "课程基本信息")})
+    @ApiResponse(description = "返回一个R对象，包含状态码及详细信息")
+    @PostMapping
+    public R addCourseInfo(@RequestBody CourseInfoFormVo courseInfoFormVo) {
+        eduCourseService.saveCourseInfo(courseInfoFormVo);
+        return R.ok();
+    }
 
     /**
      * 修改数据

@@ -1,8 +1,7 @@
 package com.servicebase.handler;
 
 import com.commonutils.R;
-import com.servicebase.exception.ImageTypeException;
-import com.servicebase.exception.NotDataFormExcelException;
+import com.servicebase.exception.UoocException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,18 +17,11 @@ public class GlobalExceptionHandler {
         return R.error();
     }
 
-    @ExceptionHandler(ImageTypeException.class)
+    @ExceptionHandler(UoocException.class)
     @ResponseBody
-    public R error(ImageTypeException e) {
+    public R error(UoocException e) {
         log.error(e.getMessage());
         e.printStackTrace();
-        return R.error();
-    }
-    @ExceptionHandler(NotDataFormExcelException.class)
-    @ResponseBody
-    public R error(NotDataFormExcelException e) {
-        log.error(e.getMessage());
-        e.printStackTrace();
-        return R.error();
+        return R.error().message(e.getMsg()).code(e.getCode());
     }
 }

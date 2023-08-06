@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.edu.entity.EduSubject;
 import com.edu.entity.excel.ExcelSubjectData;
 import com.edu.service.EduSubjectService;
-import com.servicebase.exception.NotDataFormExcelException;
+import com.servicebase.exception.UoocException;
 import jakarta.annotation.Resource;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,11 +30,7 @@ public class SubjectExcelListener implements ReadListener<ExcelSubjectData> {
     @Transactional
     public void invoke(ExcelSubjectData excelSubjectData, AnalysisContext analysisContext) {
         if(excelSubjectData == null) {
-            try {
-                throw new NotDataFormExcelException("excel中数据为空");
-            } catch (NotDataFormExcelException e) {
-                throw new RuntimeException(e);
-            }
+            throw new UoocException(20001, "Excel表格为空");
         }
         EduSubject existOneSubject = this.existOneSubject(excelSubjectData.getOneSubjectName());
         if(existOneSubject == null) {
