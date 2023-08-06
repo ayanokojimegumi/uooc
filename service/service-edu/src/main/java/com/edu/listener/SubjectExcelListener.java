@@ -60,7 +60,13 @@ public class SubjectExcelListener implements ReadListener<ExcelSubjectData> {
     public void doAfterAllAnalysed(AnalysisContext analysisContext) {
 
     }
-    //判断一级分类是否重复
+
+    /**
+     * 判断二级分类是否以存在数据库表中
+     * @param name excel表中读取到的title
+     * @param pid 父id的值
+     * @return 返回EduSubject的值
+     */
     private EduSubject existTwoSubject(String name, String pid) {
         LambdaQueryWrapper<EduSubject> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(EduSubject::getTitle, name);
@@ -69,6 +75,11 @@ public class SubjectExcelListener implements ReadListener<ExcelSubjectData> {
         return eduSubject;
     }
 
+    /**
+     * 判断一级分类是否以存在数据库表中
+     * @param name excel表中读取到的title
+     * @return 返回EduSubject的值
+     */
     private EduSubject existOneSubject(String name) {
         LambdaQueryWrapper<EduSubject> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(EduSubject::getTitle, name);

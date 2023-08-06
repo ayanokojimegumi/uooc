@@ -28,7 +28,10 @@ import java.util.List;
  */
 @Service("eduSubjectService")
 public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubject> implements EduSubjectService {
-
+    /**
+     * 使用easyExcel读取上传的excel文件，读取其中的字段，添加到数据库edu_subject表中
+     * @param file 上传的excel文件
+     */
     @SneakyThrows
     @Override
     public void importSubjectData(MultipartFile file) {
@@ -43,6 +46,10 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
         }
     }
 
+    /**
+     * 从数据库中读取课程分类信息，并将二级分类封装到一级分类中
+     * @return 返回一个包含全部一级分类的对象
+     */
     @Override
     public List<SubjectNestedVo> nestedList() {
         //最终要的到的数据列表
