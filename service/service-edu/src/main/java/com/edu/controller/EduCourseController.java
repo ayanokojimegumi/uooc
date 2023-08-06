@@ -39,8 +39,8 @@ public class EduCourseController {
     @ApiResponse(description = "返回一个R对象，包含状态码及详细信息")
     @PostMapping
     public R addCourseInfo(@RequestBody CourseInfoFormVo courseInfoFormVo) {
-        eduCourseService.saveCourseInfo(courseInfoFormVo);
-        return R.ok();
+        String id = eduCourseService.saveCourseInfo(courseInfoFormVo);
+        return R.ok().data("courseId", id);
     }
 
     /**

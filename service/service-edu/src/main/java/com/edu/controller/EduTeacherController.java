@@ -11,6 +11,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 /**
  * 讲师(EduTeacher)表控制层
@@ -30,18 +32,15 @@ public class EduTeacherController {
     private EduTeacherService eduTeacherService;
 
     /**
-     * 分页查询
-     * @param page
-     * @param limit
+     * 查询所有的讲师的信息
      * @return
      */
-    @Operation(summary = "分页查询", description = "对数据库中的数据进行查询，并且将查询的结果进行分页",
-            parameters = {@Parameter(name = "page", description = "当前页"),
-                    @Parameter(name = "limit", description = "每页数据条数")})
+    @Operation(summary = "分页查询", description = "对数据库中的数据进行查询，并且将查询的结果进行分页")
     @ApiResponse(description = "返回查询到的所有教师信息，并进行分页", responseCode = "0/1 成功返回1，失败返回0")
-    @GetMapping("/pageteacher{page}/{limit}")
-    public R pageList(@PathVariable Long page, @PathVariable Long limit){
-        return eduTeacherService.pageList(page, limit);
+    @GetMapping
+    public R list(){
+        List<EduTeacher> teacherList = eduTeacherService.list();
+        return R.ok().data("list", teacherList);
     }
 
 
@@ -87,14 +86,13 @@ public class EduTeacherController {
 
     /**
      * 新增数据
-     *
      * @param eduTeacher 实体对象
      * @return 新增结果
      */
     @Operation(summary = "新增教师", description = "根据接收的教师对象，新增教师",
     parameters = {@Parameter(name = "eduTeacher", description = "教师对象")})
     @ApiResponse(description = "返回一个R对象，包含状态码及详细信息", responseCode = "0/1 成功返回1，失败返回0")
-    @PostMapping("/save")
+    @PostMapping
     public R insert(@RequestBody EduTeacher eduTeacher) {
         this.eduTeacherService.save(eduTeacher);
         return R.ok();
@@ -102,7 +100,6 @@ public class EduTeacherController {
 
     /**
      * 修改数据
-     *
      * @param eduTeacher 实体对象
      * @return 修改结果
      */
@@ -122,8 +119,7 @@ public class EduTeacherController {
 
     /**
      * 删除数据
-     *
-     * @param id 主键
+     *  @param id 主键
      * @return 删除结果
      */
     @Operation(summary = "根据id删除教师信息",

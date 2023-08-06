@@ -5,6 +5,7 @@ import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+
 @Component
 public class MPMetaObjectHandler implements MetaObjectHandler {
     @Override

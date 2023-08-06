@@ -32,7 +32,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
      */
     @Override
     @Transactional
-    public void saveCourseInfo(CourseInfoFormVo courseInfoFormVo) {
+    public String saveCourseInfo(CourseInfoFormVo courseInfoFormVo) {
         //1.向课程表添加课程信息
         //courseInfoFormVo转换成EduCourse对象
         EduCourse eduCourse = new EduCourse();
@@ -50,6 +50,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         courseDescription.setDescription(courseInfoFormVo.getDescription());
         courseDescription.setId(eduCourseId);
         descriptionService.save(courseDescription);
+        return eduCourseId;
     }
 }
 

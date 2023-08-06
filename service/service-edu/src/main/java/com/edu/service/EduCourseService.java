@@ -13,6 +13,6 @@ import com.edu.entity.vo.CourseInfoFormVo;
 public interface EduCourseService extends IService<EduCourse> {
 
 
-    void saveCourseInfo(CourseInfoFormVo courseInfoFormVo);
+    String saveCourseInfo(CourseInfoFormVo courseInfoFormVo);
 }
 

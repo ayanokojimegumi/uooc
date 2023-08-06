@@ -29,17 +29,6 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
     @Resource
     private EduTeacherMapper teacherMapper;
 
-    @Override
-    public R pageList(Long page, Long limit){
-        Page<EduTeacher> pageParam = new Page<>(page, limit);
-        teacherMapper.selectPage(pageParam, null);
-
-        List<EduTeacher> records = pageParam.getRecords();
-        long total = pageParam.getTotal();
-        return R.ok()
-                .data("total", total)
-                .data("records", records);
-    }
 
 
     /**

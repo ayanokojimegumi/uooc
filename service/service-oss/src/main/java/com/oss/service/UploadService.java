@@ -1,6 +1,6 @@
 package com.oss.service;
 
-import com.servicebase.exception.ImageTypeException;
+import com.servicebase.exception.UoocException;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -14,5 +14,5 @@ public interface UploadService {
      * @param file 文件对象
      * @return 返回string类型
      */
-    String upload(MultipartFile file) throws ImageTypeException;
+    String upload(MultipartFile file) throws UoocException;
 }

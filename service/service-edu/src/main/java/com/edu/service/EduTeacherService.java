@@ -15,6 +15,5 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 public interface EduTeacherService extends IService<EduTeacher> {
     R pageQuery(Long page, Long limit, TeacherQuery teacherQuery);
-     R pageList(Long page, Long limit);
 }
 
