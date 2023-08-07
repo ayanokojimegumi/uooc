@@ -2,7 +2,7 @@ package com.edu.controller;
 
 
 import com.commonutils.R;
-import com.edu.entity.vo.CourseInfoFormVo;
+import com.edu.entity.vo.course.CourseInfoFormVo;
 import com.edu.service.EduCourseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -44,18 +44,32 @@ public class EduCourseController {
     }
 
     /**
-     * 修改数据
-     *
-     * @param eduCourse 实体对象
-     * @return 修改结果
+     * 根据课程id查询课程的详细信息
+     * @param id 课程id
+     * @return 返回课程的详细信息
      */
+    @Operation(summary = "根据课程id查询课程的详细信息",
+            parameters = {@Parameter(name = "id", description = "课程id")})
+    @ApiResponse(description = "返回一个R对象，包含状态码及详细信息")
+   @GetMapping("/{id}")
+    public R getCourseById(@PathVariable String id) {
+        CourseInfoFormVo courseInfoFormVo = eduCourseService.getCourseById(id);
+        return R.ok().data("courseInfoForm", courseInfoFormVo);
+   }
 
     /**
-     * 删除数据
-     *
-     * @param idList 主键结合
-     * @return 删除结果
+     * 修改课程详细信息
+     * @param courseInfoFormVo 课程对象
+     * @return 返回一个R对象，包含状态码及是否成功的信息
      */
+    @Operation(summary = "修改课程详细信息",
+            parameters = {@Parameter(name = "CourseInfoFormVo", description = "课程对象")})
+    @ApiResponse(description = "返回一个R对象，包含状态码及是否成功的信息")
+    @PutMapping
+    public R updateCourseById(@RequestBody CourseInfoFormVo courseInfoFormVo) {
+        eduCourseService.updateCourseById(courseInfoFormVo);
+        return R.ok();
+    }
 
 }
 

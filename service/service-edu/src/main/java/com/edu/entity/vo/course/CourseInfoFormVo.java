@@ -1,4 +1,4 @@
-package com.edu.entity.vo;
+package com.edu.entity.vo.course;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -27,7 +27,7 @@ public class CourseInfoFormVo implements Serializable {
     @Schema(title = "课程销售价格，设置为0则可免费观看")
     private BigDecimal price;
     @Schema(title = "总课时")
-    private Integer lessonNum;
+    private BigDecimal lessonNum;
     @Schema(title = "课程封面图片路径")
     private String cover;
     @Schema(title = "课程简介")

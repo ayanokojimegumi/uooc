@@ -32,7 +32,7 @@ public class EduCourse{
     //课程销售价格，设置为0则可免费观看
     private BigDecimal price;
     //总课时
-    private Integer lessonNum;
+    private BigDecimal lessonNum;
     //课程封面图片路径
     private String cover;
     //销售数量

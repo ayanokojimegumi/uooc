@@ -11,5 +11,6 @@ import com.edu.entity.EduVideo;
  */
 public interface EduVideoService extends IService<EduVideo> {
 
+    boolean getCourseByChapterId(String chapterId);
 }
 

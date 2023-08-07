@@ -17,5 +17,5 @@ public class VideoVo implements Serializable {
     //视频标题
     private String title;
     //是否可以试听：0收费 1免费
-    private Boolean isFree;
+    private String isFree;
 }

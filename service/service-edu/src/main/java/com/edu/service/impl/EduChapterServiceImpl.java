@@ -9,6 +9,7 @@ import com.edu.entity.vo.chapter.VideoVo;
 import com.edu.mapper.EduChapterMapper;
 import com.edu.service.EduChapterService;
 import com.edu.service.EduVideoService;
+import com.servicebase.exception.UoocException;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -46,7 +47,7 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         chapterWrapper.orderByAsc(EduChapter::getSort, EduChapter::getCourseId);
         List<EduChapter> chapterList = this.list(chapterWrapper);
         //保存ChapterVo
-        List<ChapterVo> chapterVos = new ArrayList<>();
+
         //遍历chapterList
         for (EduChapter chapters : chapterList) {
             //获取课程时长信息
@@ -70,9 +71,18 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
             //将该章节下对应的视频添加到chapterVo类的child集合
             chapterVo.setChildren(videoVos);
             //将chapterVo添加到chapterVos集合
-            chapterVos.add(chapterVo);
+            chapterVoArrayList.add(chapterVo);
         }
         return chapterVoArrayList;
+    }
+
+    @Override
+    public boolean removeChapterById(String id) {
+        if (videoService.getCourseByChapterId(id)) {
+            throw new UoocException(20001,"该分章节下存在视频课程，请先删除视频课程");
+        }
+        Integer count = baseMapper.deleteById(id);
+        return count != null && count > 0;
     }
 }
 
