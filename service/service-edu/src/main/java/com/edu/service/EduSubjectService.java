@@ -2,7 +2,7 @@ package com.edu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.edu.entity.EduSubject;
-import com.edu.entity.vo.SubjectNestedVo;
+import com.edu.entity.vo.subject.SubjectNestedVo;
 import com.servicebase.exception.UoocException;
 import org.springframework.web.multipart.MultipartFile;
 

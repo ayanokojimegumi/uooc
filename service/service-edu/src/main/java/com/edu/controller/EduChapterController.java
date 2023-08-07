@@ -1,11 +1,14 @@
 package com.edu.controller;
 
 
+import com.commonutils.R;
+import com.edu.entity.vo.chapter.ChapterVo;
 import com.edu.service.EduChapterService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 课程(EduChapter)表控制层
@@ -14,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-08-06 12:48:19
  */
 @RestController
-@RequestMapping("eduChapter")
+@RequestMapping("/eduservice/chapter")
 @CrossOrigin
+@Tag(name = "EduChapterController", description = "课程章节api")
 public class EduChapterController {
     /**
      * 服务对象
@@ -23,43 +27,11 @@ public class EduChapterController {
     @Resource
     private EduChapterService eduChapterService;
 
-    /**
-     * 分页查询所有数据
-     *
-     * @param page       分页对象
-     * @param eduChapter 查询实体
-     * @return 所有数据
-     */
-
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-
-    /**
-     * 新增数据
-     *
-     * @param eduChapter 实体对象
-     * @return 新增结果
-     */
-
-    /**
-     * 修改数据
-     *
-     * @param eduChapter 实体对象
-     * @return 修改结果
-     */
-
-
-    /**
-     * 删除数据
-     *
-     * @param idList 主键结合
-     * @return 删除结果
-     */
+    @GetMapping("/{courseId}")
+    public R getChapterByCourseId(@PathVariable("courseId") String courseId) {
+        List<ChapterVo> chapterVoList = eduChapterService.getChapterByCourseId(courseId);
+        return R.ok().data("chapterVoList", chapterVoList);
+    }
 
 }
 

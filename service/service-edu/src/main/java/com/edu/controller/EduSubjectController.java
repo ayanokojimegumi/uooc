@@ -2,7 +2,7 @@ package com.edu.controller;
 
 
 import com.commonutils.R;
-import com.edu.entity.vo.SubjectNestedVo;
+import com.edu.entity.vo.subject.SubjectNestedVo;
 import com.edu.service.EduSubjectService;
 import jakarta.annotation.Resource;
 import lombok.SneakyThrows;

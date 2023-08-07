@@ -1,4 +1,4 @@
-package com.edu.entity.vo;
+package com.edu.entity.vo.subject;
 
 import lombok.Data;
 

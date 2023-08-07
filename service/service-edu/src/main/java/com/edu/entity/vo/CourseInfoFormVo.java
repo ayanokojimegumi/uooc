@@ -20,6 +20,8 @@ public class CourseInfoFormVo implements Serializable {
     private String teacherId;
     @Schema(title = "课程专业ID")
     private String subjectId;
+    @Schema(title = "课程分类ID")
+    private String subjectParentId;
     @Schema(title = "课程标题")
     private String title;
     @Schema(title = "课程销售价格，设置为0则可免费观看")
