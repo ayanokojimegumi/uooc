@@ -1,6 +1,7 @@
 package com.edu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.edu.entity.EduChapter;
 import com.edu.entity.EduVideo;
@@ -39,39 +40,38 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
      */
     @Override
     public List<ChapterVo> getChapterByCourseId(String courseId) {
-        //最终要的到的数据列表
         ArrayList<ChapterVo> chapterVoArrayList = new ArrayList<>();
-        //获取一级分类数据记录
-        LambdaQueryWrapper<EduChapter> chapterWrapper = new LambdaQueryWrapper<>();
-        chapterWrapper.eq(EduChapter::getCourseId, courseId);
-        chapterWrapper.orderByAsc(EduChapter::getSort, EduChapter::getCourseId);
-        List<EduChapter> chapterList = this.list(chapterWrapper);
-        //保存ChapterVo
-
-        //遍历chapterList
-        for (EduChapter chapters : chapterList) {
-            //获取课程时长信息
-            LambdaQueryWrapper<EduVideo> videoWrapper = new LambdaQueryWrapper<>();
-            videoWrapper.eq(EduVideo::getCourseId, courseId);
-            videoWrapper.orderByAsc(EduVideo::getSort, EduVideo::getId);
-            List<EduVideo> videoList = videoService.list(videoWrapper);
-            //保存课程视频信息
-            List<VideoVo> videoVos = new ArrayList<>();
-            //遍历videoList，将其中的video中对应的信息添加到videoVos集合中。
-            for (EduVideo videos: videoList) {
-                VideoVo videoVo = new VideoVo();
-                //将videos类中和videoVo类中的共同字段，赋值给videoVo类
-                BeanUtils.copyProperties(videos, videoVo);
-                //添加到videoVos集合中
-                videoVos.add(videoVo);
-            }
-            //添加章节
+        //获取章节信息
+        QueryWrapper<EduChapter> queryWrapper1 = new QueryWrapper<>();
+        queryWrapper1.eq("course_id", courseId);
+        queryWrapper1.orderByAsc("sort", "id");
+        List<EduChapter> chapters = baseMapper.selectList(queryWrapper1);
+        //获取课时信息
+        QueryWrapper<EduVideo> queryWrapper2 = new QueryWrapper<>();
+        queryWrapper2.eq("course_id", courseId);
+        queryWrapper2.orderByAsc("sort", "id");
+        List<EduVideo> videos = videoService.list(queryWrapper2);
+        //填充章节vo数据
+        int count1 = chapters.size();
+        for (int i = 0; i < count1; i++) {
+            EduChapter chapter = chapters.get(i);
+            //创建章节vo对象
             ChapterVo chapterVo = new ChapterVo();
-            BeanUtils.copyProperties(chapters, chapterVo);
-            //将该章节下对应的视频添加到chapterVo类的child集合
-            chapterVo.setChildren(videoVos);
-            //将chapterVo添加到chapterVos集合
+            BeanUtils.copyProperties(chapter, chapterVo);
             chapterVoArrayList.add(chapterVo);
+            //填充课时vo数据
+            ArrayList<VideoVo> videoVoArrayList = new ArrayList<>();
+            int count2 = videos.size();
+            for (int j = 0; j < count2; j++) {
+                EduVideo video = videos.get(j);
+                if(chapter.getId().equals(video.getChapterId())){
+                    //创建课时vo对象
+                    VideoVo videoVo = new VideoVo();
+                    BeanUtils.copyProperties(video, videoVo);
+                    videoVoArrayList.add(videoVo);
+                }
+            }
+            chapterVo.setChildren(videoVoArrayList);
         }
         return chapterVoArrayList;
     }
@@ -81,8 +81,8 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         if (videoService.getCourseByChapterId(id)) {
             throw new UoocException(20001,"该分章节下存在视频课程，请先删除视频课程");
         }
-        Integer count = baseMapper.deleteById(id);
-        return count != null && count > 0;
+        int count = baseMapper.deleteById(id);
+        return count > 0;
     }
 }
 

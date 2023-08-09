@@ -2,6 +2,7 @@ package com.edu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.edu.entity.EduVideo;
+import com.edu.entity.vo.video.VideoInfoFormVo;
 
 /**
  * 课程视频(EduVideo)表服务接口
@@ -12,5 +13,13 @@ import com.edu.entity.EduVideo;
 public interface EduVideoService extends IService<EduVideo> {
 
     boolean getCourseByChapterId(String chapterId);
+
+    void saveVideoInfo(VideoInfoFormVo videoInfoFormVo);
+
+    void updateVideoById(VideoInfoFormVo videoInfoFormVo);
+
+    VideoInfoFormVo getVideoById(String id);
+
+    boolean deleteVideoByid(String id);
 }
 

@@ -33,7 +33,7 @@ public class EduTeacherController {
 
     /**
      * 查询所有的讲师的信息
-     * @return
+     * @return 返回查询到的所有教师信息
      */
     @Operation(summary = "分页查询", description = "对数据库中的数据进行查询，并且将查询的结果进行分页")
     @ApiResponse(description = "返回查询到的所有教师信息，并进行分页", responseCode = "0/1 成功返回1，失败返回0")
@@ -104,7 +104,7 @@ public class EduTeacherController {
      * @return 修改结果
      */
     @Operation(summary = "根据id修改教师信息",
-              parameters = {@Parameter(name = "id", description = "教师id")})
+              parameters = {@Parameter(name = "eduTeacher", description = "讲师对象")})
     @ApiResponse(responseCode = "0/1 成功返回1，失败返回0",description = "返回一个R对象，包含状态码及详细信息")
     @PutMapping
     public R update(@RequestBody EduTeacher eduTeacher) {

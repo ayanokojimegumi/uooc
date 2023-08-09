@@ -3,6 +3,7 @@ package com.edu.controller;
 
 import com.commonutils.R;
 import com.edu.entity.vo.course.CourseInfoFormVo;
+import com.edu.entity.vo.course.CoursePublishVo;
 import com.edu.service.EduCourseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -70,6 +71,31 @@ public class EduCourseController {
         eduCourseService.updateCourseById(courseInfoFormVo);
         return R.ok();
     }
+
+    /**
+     * 根据id获取课添加的程详细信息
+     * @param id 课程对象
+     * @return 返回一个R对象，包含状态码及是否成功的信息
+     */
+    @Operation(summary = "根据id获取课添加的发布的课程的详细信息",
+            parameters = {@Parameter(name = "id", description = "发布课程id")})
+    @ApiResponse(description = "返回一个R对象，包含状态码及是否成功的信息")
+    @GetMapping("/publish/{id}")
+    public R getCoursePublishVoById(@PathVariable("id") String id){
+        CoursePublishVo coursePublishVo = eduCourseService.getCoursePublishVoById(id);
+        return R.ok().data("coursePublishVo", coursePublishVo);
+    }
+
+    @Operation(summary = "根据id获取课添加的课程详细信息",
+            parameters = {@Parameter(name = "id", description = "发布课程id")})
+    @ApiResponse(description = "返回一个R对象，包含状态码及是否成功的信息")
+    @PostMapping("/publishCourse/{id}")
+    public R publishCourseById(@PathVariable("id") String id) {
+        eduCourseService.publishCourseById(id);
+        return R.ok();
+
+    }
+
 
 }
 

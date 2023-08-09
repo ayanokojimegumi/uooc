@@ -1,34 +1,22 @@
-2023-08-08 00:34:10.249 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getCourseById(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#getChapterByCourseId(String) mapped.
-2023-08-08 00:36:07.980 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getChapterByCourseId(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#getCourseById(String) mapped.
-2023-08-08 00:38:47.870 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getCourseById(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#getChapterByCourseId(String) mapped.
-2023-08-08 00:40:49.047 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getCourseById(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#getChapterByCourseId(String) mapped.
-2023-08-08 00:41:39.346 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getCourseById(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#nestedListByCourseId(String) mapped.
-2023-08-08 00:43:03.911 [main] WARN 
-                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduChapterController' method 
-com.edu.controller.EduChapterController#getChapterByCourseId(String)
-to {GET [/eduservice/chapter/{id}]}: There is already 'eduChapterController' bean method
-com.edu.controller.EduChapterController#getById(String) mapped.
-2023-08-08 00:47:37.478 [http-nio-8001-exec-7] WARN 
+2023-08-09 09:24:59.513 [http-nio-8001-exec-7] WARN 
                 c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
-2023-08-08 01:21:40.419 [http-nio-8001-exec-2] WARN 
+2023-08-09 09:43:52.752 [http-nio-8001-exec-3] WARN 
                 c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
+2023-08-09 10:52:41.770 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m17s723ms743µs400ns).
+2023-08-09 12:11:47.513 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m35s700ms250µs800ns).
+2023-08-09 13:28:27.587 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduChapterMapper' and 'com.edu.mapper.EduChapterMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.598 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduCourseDescriptionMapper' and 'com.edu.mapper.EduCourseDescriptionMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.598 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduCourseMapper' and 'com.edu.mapper.EduCourseMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.598 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduSubjectMapper' and 'com.edu.mapper.EduSubjectMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.598 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduTeacherMapper' and 'com.edu.mapper.EduTeacherMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.599 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduVideoMapper' and 'com.edu.mapper.EduVideoMapper' mapperInterface. Bean already defined with the same name!
+2023-08-09 13:28:27.599 [main] WARN 
+                org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.edu.mapper]' package. Please check your configuration.

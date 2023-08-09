@@ -130,7 +130,34 @@
             <artifactId>service-base</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-
     </dependencies>
+    <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
+    <build>
+
+        <!--xml配置，此是为了将来整合Hibernate或者mybatis
+            默认没有需要配置
+        -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+        <!--maven的插件，可以用很多的maven功能-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

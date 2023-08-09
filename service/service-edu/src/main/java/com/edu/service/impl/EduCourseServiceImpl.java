@@ -3,6 +3,7 @@ package com.edu.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.edu.entity.EduCourseDescription;
 import com.edu.entity.vo.course.CourseInfoFormVo;
+import com.edu.entity.vo.course.CoursePublishVo;
 import com.edu.mapper.EduCourseMapper;
 import com.edu.entity.EduCourse;
 import com.edu.service.EduCourseDescriptionService;
@@ -100,6 +101,29 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
             throw new UoocException(20001, "课程详情信息保存失败");
         }
 
+    }
+
+    /**
+     * 根据id获取课程信息，并且封装到CoursePublishVo对象
+     * @param id 课程id
+     * @return CoursePublishVo
+     */
+    @Override
+    public CoursePublishVo getCoursePublishVoById(String id) {
+        return baseMapper.getCoursePublishVoById(id);
+
+    }
+
+    /**
+     * 根据id发布课程信息
+     * @param id 课程id
+     */
+    @Override
+    public void publishCourseById(String id) {
+        EduCourse course = new EduCourse();
+        course.setId(id);
+        course.setStatus("NORMAL");
+        baseMapper.updateById(course);
     }
 }
 
