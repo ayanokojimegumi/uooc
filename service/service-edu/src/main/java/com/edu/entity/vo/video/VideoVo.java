@@ -1,4 +1,4 @@
-package com.edu.entity.vo.chapter;
+package com.edu.entity.vo.video;
 
 import lombok.Data;
 
@@ -18,4 +18,5 @@ public class VideoVo implements Serializable {
     private String title;
     //是否可以试听：0收费 1免费
     private String isFree;
+    private String videoOriginalName;
 }

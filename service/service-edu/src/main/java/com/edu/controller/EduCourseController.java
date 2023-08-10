@@ -127,5 +127,18 @@ public class EduCourseController {
         long total = pageParam.getTotal();
         return R.ok().data("total", total).data("records", records);
     }
+
+    @Operation(summary = "根据id删除课程信息，包括课程的视频信息，章节信息",
+            parameters = {@Parameter(name = "id", description = "发布的课程id")})
+    @ApiResponse(description = "返回状态码及是否成功的信息")
+    @DeleteMapping("/{id}")
+    public R deleteCourseById(@PathVariable("id") String id) {
+        boolean result = eduCourseService.removeCourseById(id);
+        if (result) {
+            return R.ok();
+        } else {
+            return R.error().message("删除课程失败");
+        }
+    }
 }
 

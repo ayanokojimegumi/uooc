@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.edu.entity.EduChapter;
 import com.edu.entity.EduVideo;
 import com.edu.entity.vo.chapter.ChapterVo;
-import com.edu.entity.vo.chapter.VideoVo;
+import com.edu.entity.vo.video.VideoVo;
 import com.edu.mapper.EduChapterMapper;
 import com.edu.service.EduChapterService;
 import com.edu.service.EduVideoService;
@@ -83,6 +83,19 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         }
         int count = baseMapper.deleteById(id);
         return count > 0;
+    }
+
+    /**
+     * 根据发布的课程id，删除该课程下的所有章节
+     * @param id 发布的课程id
+     * @return 成功则返回true，否则返回false
+     */
+    @Override
+    public boolean removeChapterByCourseId(String id) {
+        LambdaQueryWrapper<EduChapter> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(EduChapter::getCourseId, id);
+        boolean result = this.remove(queryWrapper);
+        return result;
     }
 }
 

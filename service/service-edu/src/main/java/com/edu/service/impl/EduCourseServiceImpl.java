@@ -4,13 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.edu.entity.EduCourseDescription;
+import com.edu.entity.EduVideo;
 import com.edu.entity.vo.course.CourseInfoFormVo;
 import com.edu.entity.vo.course.CoursePublishVo;
 import com.edu.entity.vo.course.CourseQuery;
 import com.edu.mapper.EduCourseMapper;
 import com.edu.entity.EduCourse;
+import com.edu.service.EduChapterService;
 import com.edu.service.EduCourseDescriptionService;
 import com.edu.service.EduCourseService;
+import com.edu.service.EduVideoService;
 import com.servicebase.exception.UoocException;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
@@ -29,6 +32,11 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
 
     @Resource
     private EduCourseDescriptionService descriptionService;
+    @Resource
+    private EduVideoService videoService;
+    @Resource
+    private EduChapterService chapterService;
+
     /**
      * 添加课程基本信息
      *
@@ -162,5 +170,27 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         }
         baseMapper.selectPage(pageParam, queryWrapper);
     }
+
+    /**
+     * 根据发布的课程id，删除该课程，包括该课程下的所有章节和视频，先删除该课程下的视频，接着删除该课程的所有章节
+     * 最后删除该课程
+     * @param id 发布的课程id
+     * @return 删除成功返回true，否则返回false
+     */
+    @Override
+    public boolean removeCourseById(String id) {
+        //删除视频
+        videoService.deleteVideoByCourseId(id);
+        //删除章节
+        chapterService.removeChapterByCourseId(id);
+        //删除课程简介
+        descriptionService.deleteByCourseId(id);
+        //删除该课程
+        boolean result = this.removeById(id);
+        return result;
+    }
+
+
+
 }
 

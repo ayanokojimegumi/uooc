@@ -23,6 +23,8 @@ public class VideoInfoFormVo {
     private String videoSourceId;
     @Schema(title = "排序")
     private Integer sort;
+    @Schema(title = "视频文件名称")
+    private String videoOriginalName;
     @Schema(title = "是否可以试听：0收费 1免费")
     private Boolean free;
 }

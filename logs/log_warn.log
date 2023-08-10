@@ -1,30 +1,54 @@
-2023-08-09 09:24:59.513 [http-nio-8001-exec-7] WARN 
+2023-08-10 09:08:29.669 [http-nio-8001-exec-2] WARN 
+                o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.commonutils.R com.edu.controller.EduCourseController.pageQuery(java.lang.Long,java.lang.Long,com.edu.entity.vo.course.CourseQuery)]
+2023-08-10 09:08:34.614 [http-nio-8001-exec-5] WARN 
+                o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.commonutils.R com.edu.controller.EduCourseController.pageQuery(java.lang.Long,java.lang.Long,com.edu.entity.vo.course.CourseQuery)]
+2023-08-10 09:12:09.835 [http-nio-8001-exec-8] WARN 
+                o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.commonutils.R com.edu.controller.EduCourseController.pageQuery(java.lang.Long,java.lang.Long,com.edu.entity.vo.course.CourseQuery)]
+2023-08-10 09:47:48.438 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m12s437ms237µs).
+2023-08-10 10:06:02.262 [http-nio-8001-exec-6] WARN 
                 c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
-2023-08-09 09:43:52.752 [http-nio-8001-exec-3] WARN 
+2023-08-10 10:06:40.399 [http-nio-8001-exec-5] WARN 
                 c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
-2023-08-09 10:52:41.770 [HikariPool-1 housekeeper] WARN 
-                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m17s723ms743µs400ns).
-2023-08-09 12:11:47.513 [HikariPool-1 housekeeper] WARN 
-                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m35s700ms250µs800ns).
-2023-08-09 13:28:27.587 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduChapterMapper' and 'com.edu.mapper.EduChapterMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.598 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduCourseDescriptionMapper' and 'com.edu.mapper.EduCourseDescriptionMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.598 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduCourseMapper' and 'com.edu.mapper.EduCourseMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.598 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduSubjectMapper' and 'com.edu.mapper.EduSubjectMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.598 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduTeacherMapper' and 'com.edu.mapper.EduTeacherMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.599 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'eduVideoMapper' and 'com.edu.mapper.EduVideoMapper' mapperInterface. Bean already defined with the same name!
-2023-08-09 13:28:27.599 [main] WARN 
-                org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.edu.mapper]' package. Please check your configuration.
-2023-08-09 19:58:35.565 [HikariPool-1 housekeeper] WARN 
-                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h4m55s654ms655µs800ns).
-2023-08-09 21:10:36.820 [HikariPool-1 housekeeper] WARN 
-                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h7m31s161ms448µs500ns).
-2023-08-09 21:51:19.299 [HikariPool-1 housekeeper] WARN 
-                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m12s323ms74µs300ns).
-2023-08-09 22:14:54.271 [http-nio-8001-exec-7] WARN 
+2023-08-10 10:07:54.673 [http-nio-8001-exec-5] WARN 
                 c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
+2023-08-10 12:22:32.010 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h11m41s317ms294µs800ns).
+2023-08-10 18:26:51.417 [http-nio-8001-exec-2] WARN 
+                c.b.m.core.toolkit.support.ReflectLambdaMeta - Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3eb738bb
+2023-08-10 19:15:25.039 [HikariPool-1 housekeeper] WARN 
+                com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m2s936ms743µs).
+2023-08-10 21:17:04.235 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:17:04.285 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:17:09.084 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:58:10.540 [Thread-7] WARN 
+                c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-10 21:58:10.540 [Thread-4] WARN 
+                com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2023-08-10 21:58:10.541 [Thread-4] WARN 
+                com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2023-08-10 21:58:10.541 [Thread-7] WARN 
+                c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2023-08-10 21:58:10.575 [SpringApplicationShutdownHook] WARN 
+                com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2023-08-10 21:58:10.575 [SpringApplicationShutdownHook] WARN 
+                com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2023-08-10 21:58:10.575 [SpringApplicationShutdownHook] WARN 
+                com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2023-08-10 21:58:10.575 [SpringApplicationShutdownHook] WARN 
+                com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2023-08-10 21:58:17.191 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:58:17.237 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:58:18.841 [main] WARN 
+                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eduChapterController': Injection of resource dependencies failed
+2023-08-10 21:58:26.896 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:58:26.941 [main] WARN 
+                com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2023-08-10 21:58:28.385 [main] WARN 
+                o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eduChapterController': Injection of resource dependencies failed

@@ -1,5 +1,6 @@
 package com.edu.entity.vo.chapter;
 
+import com.edu.entity.vo.video.VideoVo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -10,6 +10,6 @@ import com.edu.entity.EduCourseDescription;
  * @since 2023-08-06 12:57:37
  */
 public interface EduCourseDescriptionService extends IService<EduCourseDescription> {
-
+    boolean deleteByCourseId(String id);
 }
 

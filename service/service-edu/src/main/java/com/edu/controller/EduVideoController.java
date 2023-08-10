@@ -2,6 +2,7 @@ package com.edu.controller;
 
 
 import com.commonutils.R;
+import com.edu.client.VodClient;
 import com.edu.entity.vo.video.VideoInfoFormVo;
 import com.edu.service.EduVideoService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +10,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -75,8 +77,9 @@ public class EduVideoController {
             parameters = {@Parameter(name = "id", description = "课时id")})
     @ApiResponse(description = "返回R对象", responseCode = "包含状态码，是否成功及返回的详细数据")
     @DeleteMapping("/{id}")
+    @Transactional
     public R deleteVideoByid(@PathVariable("id") String id) {
-        boolean flag = eduVideoService.deleteVideoByid(id);
+        boolean flag = eduVideoService.deleteVideoById(id);
         if (flag) {
             return R.ok();
         } else {
